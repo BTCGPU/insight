@@ -5,7 +5,7 @@
 <section data-ng-controller="IndexController" data-ng-init="index()">
   <div class="container">
     <div id="home" class="row">
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-12 col-md-12">
 
         <div id="search-form-mobile" class="visible-xs" data-ng-include src="'views/includes/search.html'"></div>
 
@@ -52,15 +52,15 @@
             <td>
               <a class="ellipsis" href="tx/{{tx.txid}}">{{tx.txid}}</a>
             </td>
-            <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' BTC'}}</span></td>
+            <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' BTG'}}</span></td>
           </tr>
           </tbody>
         </table>
 
       </div>
 
-      <div class="col-xs-12 col-md-4 col-gray">
-        <h2 translate style="margin-top: 0px">About</h2>
+      <div class="col-xs-12 col-md-12 col-gray" style="margin-top: 20px;">
+        <h3 translate style="margin-top: 0px">About</h3>
         <p translate>This is an <strong>insight</strong> instance, used for <a href="https://trezor.io">TREZOR</a> web wallet.
         </p>
         <p translate>Originally written by <a href="https://bitpay.com">bitpay</a>.</p>
@@ -69,3 +69,18 @@
     </div>
   </div>
 </section>
+
+<div id="footer2" role="navigation">
+  <div class="container" data-ng-controller="FooterController">
+    <div class="links m20t pull-left">
+      All rights reserved Bitcoin Gold
+    </div>
+<!-- <a class="insight m10v pull-right" target="_blank" href="http://shop.trezor.io" style="
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  top: 3px;
+  position: relative;
+">Don't have a TREZOR? Get one!</a> -->
+  </div>
+</div>

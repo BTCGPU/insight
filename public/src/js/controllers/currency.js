@@ -19,7 +19,7 @@ angular.module('insight.currency').controller('CurrencyController',
 
         if (this.symbol === 'USD') {
           resSymbol = 'USD';
-        } else if (this.symbol === 'mBTC') {
+        } else if (this.symbol === 'mBTG') {
           resSymbol = 'm' + this.realSymbol;
         } else if (this.symbol === 'bits') {
           resSymbol = 'bits';
@@ -33,7 +33,7 @@ angular.module('insight.currency').controller('CurrencyController',
 
         if (this.symbol === 'USD') {
           response = _roundFloat((value * this.factor), 2);
-        } else if (this.symbol === 'mBTC') {
+        } else if (this.symbol === 'mBTG') {
           this.factor = 1000;
           response = _roundFloat((value * this.factor), 5);
         } else if (this.symbol === 'bits') {
@@ -61,7 +61,7 @@ angular.module('insight.currency').controller('CurrencyController',
           $rootScope.currency.factor = res.data.rate;
           $rootScope.currency.realSymbol = res.data.short;
         });
-      } else if (currency === 'mBTC') {
+      } else if (currency === 'mBTG') {
         $rootScope.currency.factor = 1000;
       } else if (currency === 'bits') {
         $rootScope.currency.factor = 1000000;

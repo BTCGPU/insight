@@ -8,24 +8,21 @@
         <span class="icon-bar"></span>
       </button>
 
-<a class="insight navbar-brand" href="." style="margin-top: 0px;font-size: 20px;padding-right: 0px;"><img src="/img/trezor-logo.png" style="
+<a class="insight navbar-brand" href="." style="margin-top: 0px;font-size: 20px;padding-right: 0px; padding-bottom:44px;"><img src="img/bitcoin-gold-logo.png" style="
     display: inline-block;
-    width: 100px;
+    width: 150px;
     position: relative;
-    top: -4px;
+    top: -17px;
     margin-right: 10px;
-">insight <span style="
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    top: -10px;
-    position: relative;
-">{{currency.realSymbol}}</span></a>
+"></a>
     </div>
     <div class="navbar-collapse collapse" collapse="$root.isCollapsed">
       <ul class="nav navbar-nav">
         <li data-ng-repeat="item in menu" ui-route="{{item.link}}" data-ng-class="{active: $uiRoute}">
           <a href="{{item.link}}">{{item.title|translate}}</a>
+        </li>
+        <li>
+          <a href="tx/send" translate>Broadcast transaction</a>
         </li>
       </ul>
       <span class="hidden-xs navbar-form navbar-left" data-ng-include src="'views/includes/search.html'"></span>
@@ -33,11 +30,11 @@
         <li>
       <div class="status" data-ng-controller="StatusController">
         <div data-ng-init="getSync()" class="pull-left">
-          <span class="t text-danger"  data-ng-show="sync.error" tooltip="{{sync.error}}" tooltip-placement="bottom"> 
+          <span class="t text-danger"  data-ng-show="sync.error" tooltip="{{sync.error}}" tooltip-placement="bottom">
               <span  class="glyphicon glyphicon-warning-sign"></span>
-              ERROR 
+              ERROR
           </span>
-          <span class="t" tooltip="{{sync.syncedBlocks}} / {{sync.blockChainHeight}} synced. {{sync.skippedBlocks || 0}} skipped" tooltip-placement="bottom" data-ng-show="sync.status==='syncing'"> 
+          <span class="t" tooltip="{{sync.syncedBlocks}} / {{sync.blockChainHeight}} synced. {{sync.skippedBlocks || 0}} skipped" tooltip-placement="bottom" data-ng-show="sync.status==='syncing'">
             <span  class="glyphicon glyphicon-refresh icon-rotate"></span>
             {{sync.syncPercentage}}%
           </span>
